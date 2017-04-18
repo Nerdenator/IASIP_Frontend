@@ -29,7 +29,7 @@ export class Characters extends React.Component {
         <h2>Characters</h2>
         <ul>
           {this.state.iasipCharacters.map(char =>
-            <li key={char}>{char.preferred_name}</li>
+            <li key={char.preferred_name}>{char.preferred_name}</li>
           )}
         </ul>
       </div>
