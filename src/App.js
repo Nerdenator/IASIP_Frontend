@@ -6,6 +6,8 @@ import {
 } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
+import {Home} from './components/Home.jsx';
+
 /*
 class App extends Component {
   render() {
@@ -34,6 +36,8 @@ class App extends Component {
             <li><Link to="/about">About</Link></li>
             <li><Link to="/characters">Characters</Link></li>
           </ul>
+          <hr/>
+          <Route exact path="/" component={Home}/>
         </div>
       </Router>
     )
