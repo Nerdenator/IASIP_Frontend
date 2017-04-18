@@ -14,7 +14,11 @@ export class Characters extends React.Component {
   componentDidMount() {
     axios.get(`http://iasip-backend.herokuapp.com/characters.json`)
       .then(res => {
-        const iasipCharacters = res.data.data.children.map(obj => obj.data);
+        console.log(res.data);
+        console.log(typeof (res.data));
+        const iasipCharacters = Array.from(res.data.results);
+
+        console.log(iasipCharacters);
         this.setState({ iasipCharacters });
       });
   }
@@ -24,7 +28,7 @@ export class Characters extends React.Component {
       <div>
         <h2>Characters</h2>
         <ul>
-          {this.state.iasipCharacters.map(char => 
+          {this.state.iasipCharacters.map(char =>
             <li key={char}>{char.preferred_name}</li>
           )}
         </ul>
