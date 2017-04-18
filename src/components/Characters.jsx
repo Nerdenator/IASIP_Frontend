@@ -14,11 +14,7 @@ export class Characters extends React.Component {
   componentDidMount() {
     axios.get(`http://iasip-backend.herokuapp.com/characters.json`)
       .then(res => {
-        console.log(res.data);
-        console.log(typeof (res.data));
         const iasipCharacters = Array.from(res.data.results);
-
-        console.log(iasipCharacters);
         this.setState({ iasipCharacters });
       });
   }
