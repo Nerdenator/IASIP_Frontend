@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
-
+/*
 class App extends Component {
   render() {
     return (
@@ -17,5 +22,21 @@ class App extends Component {
     );
   }
 }
+*/
 
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/characters">Characters</Link></li>
+          </ul>
+        </div>
+      </Router>
+    )
+  }
+}
 export default App;
