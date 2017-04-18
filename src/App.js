@@ -7,6 +7,7 @@ import {
 import logo from './logo.svg';
 import './App.css';
 import {Home} from './components/Home.jsx';
+import {About} from './components/About.jsx';
 
 /*
 class App extends Component {
@@ -38,6 +39,7 @@ class App extends Component {
           </ul>
           <hr/>
           <Route exact path="/" component={Home}/>
+          <Route path="/about" component={About}/>
         </div>
       </Router>
     )
