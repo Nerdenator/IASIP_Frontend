@@ -8,6 +8,7 @@ import logo from './logo.svg';
 import './App.css';
 import {Home} from './components/Home.jsx';
 import {About} from './components/About.jsx';
+import {Characters} from './components/Characters.jsx';
 
 /*
 class App extends Component {
@@ -31,7 +32,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="container">
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About</Link></li>
@@ -40,6 +41,7 @@ class App extends Component {
           <hr/>
           <Route exact path="/" component={Home}/>
           <Route path="/about" component={About}/>
+          <Route path="/characters" component={Characters}/>
         </div>
       </Router>
     )
