@@ -12,10 +12,13 @@ export class Characters extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`http://iasip-backend.herokuapp.com/characters.json`)
+    axios.get(`http://iasip-backend.herokuapp.com/characters/`)
       .then(res => {
-        const iasipCharacters = Array.from(res.data.results);
-        this.setState({ iasipCharacters });
+
+
+        const iasipCharacters = (res.data);
+        console.log(iasipCharacters);
+         this.setState({ iasipCharacters });
       });
   }
 
