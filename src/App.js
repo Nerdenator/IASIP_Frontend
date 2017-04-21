@@ -8,12 +8,13 @@ import './App.css';
 import {Home} from './components/Home.jsx';
 import {About} from './components/About.jsx';
 import {Characters} from './components/Characters.jsx';
-
+import {MainMenu} from './components/MainMenu';
 class App extends Component {
   render() {
     return (
       <Router>
         <div className="container">
+          <MainMenu/>
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About</Link></li>
