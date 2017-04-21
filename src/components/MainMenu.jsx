@@ -6,6 +6,7 @@ import axios from 'axios';
 import {About} from './About';
 import {CharacterDetail} from './CharacterDetail';
 import {Navbar, Nav, NavItem} from 'react-bootstrap';
+import {LinkContainer} from 'react-router-bootstrap';
 import {
     BrowserRouter as Router,
     Route,
@@ -54,11 +55,11 @@ export class MainMenu extends React.Component {
                         </Navbar.Brand>
                     </Navbar.Header>
                     <Nav>
-                        <NavItem eventKey={1}><Link to="/charlie">Charlie</Link></NavItem>
-                        <NavItem eventKey={2} href="#">Dennis</NavItem>
-                        <NavItem eventKey={3} href="#">Frank</NavItem>
-                        <NavItem eventKey={4} href="#">Mac</NavItem>
-                        <NavItem eventKey={5} href="#">Sweet Dee</NavItem>
+                        <LinkContainer to="/charlie"><NavItem>Charlie</NavItem></LinkContainer>
+                        <LinkContainer to="/dennis"><NavItem>Dennis</NavItem></LinkContainer>
+                        <LinkContainer to="/frank"><NavItem>Frank</NavItem></LinkContainer>
+                        <LinkContainer to="/mac"><NavItem>Mac</NavItem></LinkContainer>
+                        <LinkContainer to="/sweetdee"><NavItem>Sweet Dee</NavItem></LinkContainer>
                     </Nav>
                     {routes.map((route, index) => (
                         // You can render a <Route> in as many places
