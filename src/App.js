@@ -12,9 +12,9 @@ import {MainMenu} from './components/MainMenu';
 class App extends Component {
   render() {
     return (
-      <Router>
+        <div>
         <MainMenu/>
-      </Router>
+        </div>
     )
   }
 }

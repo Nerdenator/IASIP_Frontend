@@ -33,7 +33,6 @@ const routes = [
 export class MainMenu extends React.Component {
     constructor(props) {
         super(props);
-
     }
 
     componentDidMount() {
