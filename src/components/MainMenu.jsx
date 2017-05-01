@@ -25,10 +25,31 @@ const routes = [
         main: About
     },
     {
-        path: '/Charlie',
+        path: '/charlie',
+        sidebar: MainMenu,
+        main: CharacterDetail
+    },
+    {
+        path: '/dennis',
+        sidebar: MainMenu,
+        main: CharacterDetail
+    },
+    {
+        path: '/frank',
+        sidebar: MainMenu,
+        main: CharacterDetail
+    },
+    {
+        path: '/mac',
+        sidebar: MainMenu,
+        main: CharacterDetail
+    },
+    {
+        path: '/sweetdee',
         sidebar: MainMenu,
         main: CharacterDetail
     }
+
 ];
 
 export class MainMenu extends React.Component {
@@ -51,7 +72,7 @@ export class MainMenu extends React.Component {
                 <Navbar>
                     <Navbar.Header>
                         <Navbar.Brand>
-                            <a href="#">The Gang Gets Indicted</a>
+                            <Link to="/">The Gang Gets Indicted</Link>
                         </Navbar.Brand>
                     </Navbar.Header>
                     <Nav>
