@@ -7,16 +7,33 @@ import {
     Switch,
     Link
 } from 'react-router-dom';
+import axios from 'axios';
 
-const TheGang = () => (
-    <div>
-        <ul>
-            {
+class TheGang extends React.Component {
+    constructor(props) {
+        super(props);
 
-            }
-        </ul>
-    </div>
-)
+        this.state = {
+            gangList: []
+        };
+    }
+
+    componentDidMount() {
+        axios.get(`http://iasip-backend.herokuapp.com/characters/?format=json`)
+            .then(res => {
+                console.log(res.data.map(function(a) {return a.preferred_name;}));
+                const theGang = res.data.map(obj => obj.preferred_name);
+                this.setState({gangList:theGang})
+                console.log(this.state);
+            })
+    }
+
+    render(){
+        return(
+            <h1>This does something in the console.</h1>
+        )
+    }
+}
 
 const Home = () => (
     <div>
@@ -28,6 +45,7 @@ const Main = () => (
     <main>
         <Switch>
             <Route exact path='/' component={Home} />
+            <Route path='/gang' component={TheGang} />
         </Switch>
     </main>
 );
