@@ -21,16 +21,20 @@ class TheGang extends React.Component {
     componentDidMount() {
         axios.get(`http://iasip-backend.herokuapp.com/characters/?format=json`)
             .then(res => {
-                console.log(res.data.map(function(a) {return a.preferred_name;}));
+                //console.log(res.data.map(function(a) {return a.preferred_name;}));
                 const theGang = res.data.map(obj => obj.preferred_name);
-                this.setState({gangList:theGang})
+                this.setState({gangList:theGang});
                 console.log(this.state);
             })
     }
 
     render(){
         return(
-            <h1>This does something in the console.</h1>
+            <ul>
+                {this.state.gangList.map(member =>
+                    <li key={member}><Link to={`/${member.toLowerCase()}`}>{member}</Link></li>
+                )}
+            </ul>
         )
     }
 }
